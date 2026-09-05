@@ -1,6 +1,8 @@
 import Link from "next/link";
+
 import {
   FaFileAlt,
+  FaSearch,
   FaCalendarAlt,
   FaEnvelope,
   FaComments,
@@ -16,6 +18,12 @@ const cards = [
     icon: <FaFileAlt className="text-4xl text-blue-400" />,
     path: "/resume",
     description: "Create ATS-friendly resumes instantly.",
+  },
+  {
+    title: "Resume Analyzer",
+    icon: <FaSearch className="text-4xl text-cyan-400" />,
+    path: "/resume-analyzer",
+    description: "Analyze your resume and get AI-powered ATS suggestions.",
   },
   {
     title: "Study Planner",
@@ -64,11 +72,8 @@ const cards = [
 export default function Home() {
   return (
     <div>
-
       {/* Hero Section */}
-
       <div className="mb-10 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-700 rounded-3xl p-8 shadow-2xl">
-
         <h1 className="text-5xl lg:text-6xl font-extrabold text-white mb-4">
           🚀 AI Productivity Hub
         </h1>
@@ -79,11 +84,9 @@ export default function Home() {
         </p>
 
         {/* Stats */}
-
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
-
           <div className="bg-slate-900/80 backdrop-blur rounded-2xl p-5 border border-slate-700">
-            <h3 className="text-3xl font-bold text-blue-400">8</h3>
+            <h3 className="text-3xl font-bold text-blue-400">9</h3>
             <p className="text-gray-300 mt-2">AI Modules</p>
           </div>
 
@@ -101,25 +104,18 @@ export default function Home() {
             <h3 className="text-3xl font-bold text-purple-400">Next.js</h3>
             <p className="text-gray-300 mt-2">Built With</p>
           </div>
-
         </div>
-
       </div>
 
       {/* Modules */}
-
       <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
-
         {cards.map((card) => (
           <Link
             key={card.title}
             href={card.path}
             className="bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:border-blue-500 hover:-translate-y-2 hover:shadow-xl transition-all duration-300"
           >
-
-            <div className="mb-6">
-              {card.icon}
-            </div>
+            <div className="mb-6">{card.icon}</div>
 
             <h2 className="text-2xl font-bold text-white mb-2">
               {card.title}
@@ -132,12 +128,9 @@ export default function Home() {
             <span className="text-blue-400 font-semibold">
               Open Module →
             </span>
-
           </Link>
         ))}
-
       </div>
-
     </div>
   );
 }

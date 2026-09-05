@@ -14,13 +14,14 @@ import {
   FaUserTie,
   FaPlane,
   FaRocket,
-  FaGithub,
   FaHistory,
+  FaSearch,
 } from "react-icons/fa";
 
 const menu = [
   { name: "Dashboard", href: "/", icon: FaHome },
   { name: "Resume Builder", href: "/resume", icon: FaFileAlt },
+  { name: "Resume Analyzer", href: "/resume-analyzer", icon: FaSearch },
   { name: "Study Planner", href: "/study-planner", icon: FaCalendarAlt },
   { name: "Email Assistant", href: "/email", icon: FaEnvelope },
   { name: "AI Chat", href: "/chat", icon: FaComments },
@@ -28,8 +29,6 @@ const menu = [
   { name: "Business Ideas", href: "/business", icon: FaLightbulb },
   { name: "Interview Prep", href: "/interview", icon: FaUserTie },
   { name: "Travel Planner", href: "/travel", icon: FaPlane },
-
-  // History
   { name: "History", href: "/history", icon: FaHistory },
 ];
 
@@ -38,11 +37,10 @@ export default function Sidebar() {
 
   return (
     <aside className="w-72 min-h-screen bg-slate-950 border-r border-slate-800 flex flex-col">
-
+      
       {/* Logo */}
       <div className="p-6 border-b border-slate-800">
         <div className="flex items-center gap-3">
-
           <div className="bg-blue-600 p-3 rounded-xl">
             <FaRocket className="text-white text-xl" />
           </div>
@@ -56,13 +54,11 @@ export default function Sidebar() {
               Your AI Workspace
             </p>
           </div>
-
         </div>
       </div>
 
       {/* Navigation */}
       <nav className="flex-1 p-5 space-y-2 overflow-y-auto">
-
         {menu.map((item) => {
           const Icon = item.icon;
           const active = pathname === item.href;
@@ -85,14 +81,12 @@ export default function Sidebar() {
             </Link>
           );
         })}
-
       </nav>
 
       {/* Footer */}
       <div className="border-t border-slate-800 p-5">
-
         <div className="bg-slate-900 rounded-xl p-4">
-
+          
           <p className="text-sm font-semibold text-white">
             🚀 AI Productivity Hub
           </p>
@@ -101,17 +95,10 @@ export default function Sidebar() {
             Built using Next.js + Groq AI
           </p>
 
-          <button
-            className="mt-4 w-full bg-blue-600 hover:bg-blue-700 transition rounded-lg py-2 flex items-center justify-center gap-2"
-          >
-            <FaGithub />
-            GitHub
-          </button>
+         
 
         </div>
-
       </div>
-
     </aside>
   );
 }
